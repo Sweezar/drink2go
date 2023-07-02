@@ -1,0 +1,47 @@
+.button {
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: $font-stack;
+  color: $base-white-color;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: $base-primary-color;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-lighter-color;
+  }
+
+  &:active {
+    background-color: $primary-darker-color;
+  }
+
+  &:disabled {
+    background-color: $base-grey-color;
+  }
+}
+
+.button--reset {
+  background-color: $base-white-color;
+  color: $base-primary-color;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-lighter-color;
+    color: $base-white-color;
+  }
+
+  &:active {
+    background-color: $primary-darker-color;
+    color: $base-white-color;
+  }
+
+  &:disabled {
+    background-color: $base-grey-color;
+    color: $base-white-color;
+  }
+}

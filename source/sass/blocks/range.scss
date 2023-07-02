@@ -1,0 +1,80 @@
+
+.range__scale {
+  position: relative;
+  height: 2px;
+  background-color: $light-grey-color;
+  width: 280px;
+
+  @media (min-width: $tablet-width) {
+    width: 223px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 318px;
+  }
+}
+
+.range__bar {
+  position: absolute;
+  height: 4px;
+  top: -1px;
+  background-color: $primary-lighter-color;
+}
+
+.filter__group--range:disabled .range__bar{
+  background-color: $base-grey-color;
+}
+
+.range__toggle {
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid $primary-lighter-color;
+  background-color: $base-white-color;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      background-color: $primary-opacity-color;
+    }
+  }
+
+  &:active {
+    &::after {
+      background-color: $base-primary-color;
+    }
+  }
+
+  &:disabled {
+    border-color: $base-grey-color;
+    &::after {
+      background-color: $base-white-color;
+    }
+  }
+}
+
+.range__toggle--min {
+  top: -10px;
+  left: -10px;
+}
+
+.range__toggle--max {
+  top: -10px;
+  right: -10px;
+}

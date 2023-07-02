@@ -1,0 +1,129 @@
+.catalog {
+  background-color: $lightest-grey-background;
+  padding-top: 50px;
+  padding-bottom: 44px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+
+    padding-top: 78px;
+    padding-bottom: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+.catalog__wrapper {
+  box-sizing: border-box;
+  width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: $tablet-width;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: $desktop-width;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
+    grid-template-columns: 318px 1011px;
+    column-gap: 30px;
+    grid-template-areas:
+        'badge badge'
+        'header header'
+        'filter sort'
+        'filter products'
+        'pagination pagination';
+  }
+}
+
+.catalog__badge {
+  margin: 0;
+  margin-bottom: 4px;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    grid-area: badge;
+  }
+}
+
+.catalog__header {
+  margin: 0;
+  margin-bottom: 22px;
+  color: $base-black-color;
+  text-align: center;
+  font-size: 24px;
+  font-family: $font-stack;
+  font-weight: 700;
+  line-height: 36px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+    line-height: 64px;
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: header;
+    margin-bottom: 38px;
+  }
+}
+
+.catalog__filter {
+  margin-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: filter;
+  }
+}
+
+.catalog__sorting {
+  margin-bottom: 16px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 24px;
+    margin-left: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: sort;
+  }
+}
+
+.catalog__product-list {
+  display: grid;
+  row-gap: 21px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 71px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: products;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 61px;
+  }
+}
+
+.catalog__pagination {
+  @media (min-width: $desktop-width) {
+    grid-area: pagination;
+  }
+}

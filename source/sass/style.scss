@@ -1,0 +1,34 @@
+/* GLOBAL */
+@import "global/variables";
+@import "global/global";
+@import "global/fonts";
+
+/* BLOCKS */
+@import "blocks/visually-hidden";
+@import "blocks/button";
+
+// Header
+@import "blocks/header";
+@import "blocks/main-nav";
+@import "blocks/site-list";
+@import "blocks/user-list";
+
+// Main
+@import "blocks/main";
+@import "blocks/swiper";
+@import "blocks/slider";
+@import "blocks/badge";
+@import "blocks/advantages";
+@import "blocks/catalog";
+@import "blocks/filter";
+@import "blocks/range";
+@import "blocks/control";
+@import "blocks/sorting";
+@import "blocks/product-card";
+@import "blocks/pagination";
+@import "blocks/map";
+
+// Footer
+@import "blocks/footer";
+@import "blocks/social";
+@import "blocks/copyright";

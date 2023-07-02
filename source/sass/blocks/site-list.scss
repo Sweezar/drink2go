@@ -1,0 +1,79 @@
+.site-list {
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  order: 3;
+  display: flex;
+  flex-direction: column;
+  width: $mobile-width;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    order: 1;
+    position: static;
+    margin-right: 60px;
+    width: auto;
+  }
+}
+
+.site-list__item {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  top: 60px;
+  background-color: $base-white-color;
+  border-top: 1px solid $base-secondary-color;
+  z-index: 2;
+
+  &:last-child {
+    border-bottom: 1px solid $base-secondary-color;
+  }
+
+  &:active {
+    background-color: $base-secondary-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    border: none;
+    position: static;
+    padding: 32px 20px 30px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 34px 20px 30px;
+    margin-left: 20px;
+  }
+}
+
+.site-list__item--active {
+  @media (min-width: $tablet-width) {
+    color: $base-primary-color;
+    border-bottom: 2px solid $base-primary-color;
+  }
+}
+
+.site-list__item--active a {
+  @media (min-width: $tablet-width) {
+    color: $base-primary-color;
+  }
+}
+
+.site-list a {
+  position: relative;
+  display: block;
+  font-family: $font-stack;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &:focus,
+  &:hover {
+    color: $base-primary-color;
+  }
+}

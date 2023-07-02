@@ -1,0 +1,31 @@
+.copyright {
+  text-align: center;
+}
+
+.copyright__link {
+  display: flex;
+  justify-content: center;
+}
+
+.copyright__link-text {
+  color: $base-grey-color;
+  font-size: 12px;
+  font-family: $font-stack;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+
+.copyright__image {
+  display: inline;
+  margin-left: 3px;
+  fill: $base-grey-color;
+
+  &:hover,
+  &:focus {
+    fill: $base-primary-color;
+  }
+
+  &:active {
+    fill: $primary-darker-color;
+  }
+}

@@ -1,0 +1,169 @@
+.advantages {
+  width: $mobile-width;
+  padding-top: 38px;
+  padding-bottom: 60px;
+  background-color: $base-white-color;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: $tablet-width;
+    padding-top: 43px;
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: $desktop-width;
+    padding-top: 90px;
+    padding-bottom: 118px;
+  }
+}
+
+.advantages__wrapper {
+  margin: 0 auto;
+  width: 280px;
+
+  @media (min-width: $tablet-width) {
+    width: 728px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1360px;
+  }
+}
+
+.advantages__badge {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.advantages__header {
+  margin: 0;
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 24px;
+  font-family: $font-stack;
+  font-weight: 700;
+  line-height: 36px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+    line-height: 64px;
+    margin-bottom: 60px;
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 78px;
+  }
+}
+
+.advantages__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: grid;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+    column-gap: 10px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr  1fr;
+    column-gap: 26px;
+  }
+}
+
+.advantages__item {
+  padding-top: 32px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 50px 276px;
+    row-gap: 6px;
+    column-gap: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
+.advantages__icon-wrapper {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 5px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 8px;
+    margin-top: 2px;
+    grid-row: span 2;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 0;
+    margin-bottom: 18px;
+  }
+}
+
+.advantages__item--speed .advantages__icon-wrapper {
+  background-image: url(/img/icons/stack.svg#clock);
+}
+
+.advantages__item--comfort .advantages__icon-wrapper {
+  background-image: url(/img/icons/stack.svg#pocket);
+}
+
+.advantages__item--cheerfulness .advantages__icon-wrapper{
+  background-image: url(/img/icons/stack.svg#lightning);
+}
+
+.advantages__item--eco .advantages__icon-wrapper {
+  background-image: url(/img/icons/stack.svg#leaf);
+}
+
+.advantages__title {
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+  color: $base-black-color;
+  font-size: 18px;
+  font-family: $font-stack;
+  font-weight: 700;
+  line-height: 32px;
+
+  @media (min-width: $tablet-width) {
+    text-align: start;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.advantages__description {
+  margin: 0;
+  text-align: center;
+  color: $base-black-color;
+  font-size: 14px;
+  font-family: $font-stack;
+  line-height: 20px;
+  letter-spacing: 1px;
+
+  @media (min-width: $tablet-width) {
+    text-align: start;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: center;
+  }
+}

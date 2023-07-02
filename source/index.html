@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <title>Drink2Go</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="page__body">
+    <header class="page-header">
+      <a class="page-header__logo" href="">
+        <picture>
+          <source media="(min-width: 1440px)" width="170" height="36" srcset="./img/logo/logo-full.svg">
+          <source media="(min-width: 768px)" width="82" height="36" srcset="./img/logo/logo-medium.svg">
+          <img class="page-header__logo-image" src="./img/logo/logo-short.svg" width="32" height="36" alt="Интернет магазин Drink2Go">
+        </picture>
+        <p class="page-header__logo-text">Интернет-магазин кофейных напитков</p>
+      </a>
+      <nav class="page-header__nav main-nav main-nav--nojs">
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item site-list__item--active">
+            <a>
+              Главная
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">
+              Каталог
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">
+              Доставка
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">
+              О нас
+            </a>
+          </li>
+        </ul>
+        <ul class="main-nav__list user-list">
+          <li class="user-list__item">
+            <a class="user-list__login" href="#">
+              <svg class="user-list__item-icon user-list__login-icon" width="16" height="16" viewBox="0 0 16 16" fill="#333333" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 4C10.6667 5.47276 9.47276 6.66667 8 6.66667C6.52724 6.66667 5.33333 5.47276 5.33333 4C5.33333 2.52724 6.52724 1.33333 8 1.33333C9.47276 1.33333 10.6667 2.52724 10.6667 4ZM12 4C12 6.20914 10.2091 8 8 8C5.79086 8 4 6.20914 4 4C4 1.79086 5.79086 0 8 0C10.2091 0 12 1.79086 12 4ZM3.19673 12.3102C4.43611 11.2774 6.1613 10.6667 8 10.6667C9.8387 10.6667 11.5639 11.2774 12.8033 12.3102C14.0354 13.337 14.6667 14.6719 14.6667 16H16C16 14.2321 15.1573 12.5363 13.6569 11.286C12.1566 10.0357 10.1218 9.33333 8 9.33333C5.87821 9.33333 3.8434 10.0357 2.34315 11.286C0.842686 12.5363 0 14.2321 0 16L1.33333 16C1.33333 14.6719 1.96465 13.337 3.19673 12.3102Z"/>
+              </svg>
+              <span>Войти</span>
+            </a>
+          </li>
+          <li class="user-list__item">
+            <a class="user-list__basket" href="#">
+              <svg class="user-list__item-icon user-list__basket-icon" width="16" height="16" viewBox="0 0 16 16" fill="#333333" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66091 3.87546L5.89351 6.66667H10.1065L10.3391 3.87546C10.4531 2.50699 9.37321 1.33333 8 1.33333C6.6268 1.33333 5.54687 2.50699 5.66091 3.87546ZM11.4444 6.66667L11.6678 3.98618C11.8466 1.84036 10.1533 0 8 0C5.84674 0 4.15336 1.84036 4.33218 3.98618L4.55556 6.66667H1.34687H0L0.190476 8L1.00626 13.7105C1.19393 15.0242 2.31905 16 3.64612 16H12.3539C13.6809 16 14.8061 15.0242 14.9937 13.7105L15.8095 8L16 6.66667H14.6531H11.4444ZM11.3333 8H11.2801L11.0579 10.6667H14.0817L14.4627 8H11.3333ZM9.94213 8H6.05787L6.28009 10.6667H9.71991L9.94213 8ZM4.71991 8H4.66667H1.53735L1.9183 10.6667H4.94213L4.71991 8ZM6.61342 14.6667L6.3912 12H9.6088L9.38658 14.6667H6.61342ZM10.9468 12L10.7245 14.6667H12.3539C13.0174 14.6667 13.58 14.1788 13.6738 13.5219L13.8912 12H10.9468ZM5.05324 12L5.27547 14.6667H3.64612C2.98259 14.6667 2.42003 14.1788 2.32619 13.5219L2.10877 12H5.05324Z"/>
+              </svg>
+              <span>Корзина</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Drink2Go</h1>
+
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="slider slider--flat">
+              <div class="slider__image-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="img/sliders/flat_white_img_desktop.webp 1x, img/sliders/flat_white_img_desktop@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="img/sliders/flat_white_img_desktop.png 1x, img/sliders/flat_white_img_desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/sliders/flat_white_img_tablet.webp 1x, img/sliders/flat_white_img_tablet@2x.webp 2x">
+                  <source media="(min-width: 768px)" srcset="img/sliders/flat_white_img_tablet.png 1x, img/sliders/flat_white_img_tablet@2x.png 2x">
+                  <source srcset="img/sliders/flat_white_img_mobile.webp" type="image/webp">
+                  <img class="slider__image" src="img/sliders/flat_white_img_mobile.png" srcset="img/sliders/flat_white_img_mobile@2x.png 2x" alt="Декаф Флэт Уайт">
+                </picture>
+              </div>
+              <p class="slider__badge badge">Новинка!</p>
+              <h2 class="slider__header">Декаф Флэт Уайт</h2>
+              <p class="slider__description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
+              <div class="slider__buy-wrapper">
+                <p class="slider__price">
+                  <span class="slider__price-old">295₽</span>
+                  <span class="slider__price-new">225₽</span>
+                </p>
+                <button class="button slider__button">Заказать</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slider slider--latte">
+              <div class="slider__image-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="img/sliders/lavender_latte_img_desktop.webp 1x, img/sliders/lavender_latte_img_desktop@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="img/sliders/lavender_latte_img_desktop.png 1x, img/sliders/lavender_latte_img_desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/sliders/lavender_latte_img_tablet.webp 1x, img/sliders/lavender_latte_img_tablet@2x.webp 2x">
+                  <source media="(min-width: 768px)" srcset="img/sliders/lavender_latte_img_tablet.png 1x, img/sliders/lavender_latte_img_tablet@2x.png 2x">
+                  <source srcset="img/sliders/lavender_latte_img_mobile.webp" type="image/webp">
+                  <img class="slider__image" src="img/sliders/lavender_latte_img_mobile.png" srcset="img/sliders/lavender_latte_img_mobile@2x.png 2x" alt="Лавандовый Латте">
+                </picture>
+              </div>
+              <p class="slider__badge badge">Новинка!</p>
+              <h2 class="slider__header">Лавандовый Латте</h2>
+              <p class="slider__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
+              <div class="slider__buy-wrapper">
+                <p class="slider__price">
+                  <span class="slider__price-old">295₽</span>
+                  <span class="slider__price-new">265₽</span>
+                </p>
+                <button class="button slider__button">Заказать</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slider slider--espresso">
+              <div class="slider__image-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="img/sliders/triple_espresso_img_desktop.webp 1x, img/sliders/triple_espresso_img_desktop@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="img/sliders/triple_espresso_img_desktop.png 1x, img/sliders/triple_espresso_img_desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/sliders/triple_espresso_img_tablet.webp 1x, img/sliders/triple_espresso_img_tablet@2x.webp 2x">
+                  <source media="(min-width: 768px)" srcset="img/sliders/triple_espresso_img_tablet.png 1x, img/sliders/triple_espresso_img_tablet@2x.png 2x">
+                  <source srcset="img/sliders/triple_espresso_img_mobile.webp" type="image/webp">
+                  <img class="slider__image" src="img/sliders/triple_espresso_img_mobile.png" srcset="img/sliders/triple_espresso_img_mobile@2x.png 2x" alt="Тройной Эспрессо">
+                </picture>
+              </div>
+              <p class="slider__badge badge">Новинка!</p>
+              <h2 class="slider__header">Тройной Эспрессо</h2>
+              <p class="slider__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
+              <div class="slider__buy-wrapper">
+                <p class="slider__price">
+                  <span class="slider__price-old">395₽</span>
+                  <span class="slider__price-new">375₽</span>
+                </p>
+                <button class="button slider__button">Заказать</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button swiper-button-prev"></div>
+        <div class="swiper-button swiper-button-next"></div>
+
+      </div>
+
+      <section class="advantages">
+        <div class="advantages__wrapper">
+          <p class="advantages__badge badge">Преимущества</p>
+          <h2 class="advantages__header">Главные причины выбрать Drink2Go</h2>
+          <ul class="advantages__list">
+            <li class="advantages__item advantages__item--speed">
+              <div class="advantages__icon-wrapper"></div>
+              <h3 class="advantages__title">Скорость</h3>
+              <p class="advantages__description">Готовый напиток всегда под рукой — просто открой банку</p>
+            </li>
+            <li class="advantages__item advantages__item--comfort">
+              <div class="advantages__icon-wrapper"></div>
+              <h3 class="advantages__title">Удобство</h3>
+              <p class="advantages__description">Легко помещается и в карман,<br> и в маленькую сумочку</p>
+            </li>
+            <li class="advantages__item advantages__item--cheerfulness">
+              <div class="advantages__icon-wrapper"></div>
+              <h3 class="advantages__title">Бодрость</h3>
+              <p class="advantages__description">Сбалансированная доза кофеина даст мощный заряд энергии</p>
+            </li>
+            <li class="advantages__item advantages__item--eco">
+              <div class="advantages__icon-wrapper"></div>
+              <h3 class="advantages__title">Экологичность</h3>
+              <p class="advantages__description">Вся упаковка сделана <br>из перерабатываемых материалов</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <div class="catalog__wrapper">
+          <p class="catalog__badge badge">Каталог</p>
+          <h2 class="catalog__header">Каталог кофейных напитков</h2>
+          <form class="catalog__filter filter" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter__group filter__group--range">
+              <legend class="filter__title">Цена</legend>
+              <div class="filter__range range range__scale">
+                <div class="range__bar" style="left: 10px; width: 139px" >
+                  <button class="range__toggle range__toggle--min" type="button">
+                    <span class="visually-hidden">Изменить минимальную цену.</span>
+                  </button>
+                  <button class="range__toggle range__toggle--max" type="button">
+                    <span class="visually-hidden">Изменить максимальную цену.</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="filter__input-wrapper">
+                <label class="filter__label">
+                  <input class="filter__input" type="number" name="min-price" placeholder="0">
+                </label>
+                <label class="filter__label">
+                  <input class="filter__input" type="number" name="max-price" value="123">
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="filter__group">
+              <legend class="filter__title">Наличие молока</legend>
+              <ul class="filter__list">
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="radio" name="presence-of-milk" value="any" checked>
+                    <span class="control__mark control__mark--radio"></span>
+                    <span class="control__label">Неважно</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="radio" name="presence-of-milk" value="animal">
+                    <span class="control__mark control__mark--radio"></span>
+                    <span class="control__label">Только животное</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="radio" name="presence-of-milk" value="vegetable">
+                    <span class="control__mark control__mark--radio"></span>
+                    <span class="control__label">Только растительное</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="radio" name="presence-of-milk" value="no-milk" disabled>
+                    <span class="control__mark control__mark--radio"></span>
+                    <span class="control__label">Без молока</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <fieldset class="filter__group">
+              <legend class="filter__title">Страна произростания</legend>
+              <ul class="filter__list">
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="checkbox" name="Brazil" checked>
+                    <span class="control__mark control__mark--checkbox"></span>
+                    <span class="control__label">Бразилия</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="checkbox" name="Ethiopia">
+                    <span class="control__mark control__mark--checkbox"></span>
+                    <span class="control__label">Эфиопия</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="checkbox" name="Colombia">
+                    <span class="control__mark control__mark--checkbox"></span>
+                    <span class="control__label">Колумбия</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="checkbox" name="Costa-Rica">
+                    <span class="control__mark control__mark--checkbox"></span>
+                    <span class="control__label">Коста-Рика</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control">
+                    <input class="visually-hidden control__input" type="checkbox" name="Peru" disabled>
+                    <span class="control__mark control__mark--checkbox"></span>
+                    <span class="control__label">Перу</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <div class="filter__buttons-wrapper">
+              <button class="filter__button filter__button--submit button" type="submit">Применить</button>
+              <button class="filter__button button button--reset" type="reset">Сбросить</button>
+            </div>
+            </form>
+
+          <form class="catalog__sorting sorting">
+            <label class="sorting__label" for="sort">Сортировка:</label>
+            <select class="sorting__select-control" id="sort" name="sort">
+              <option value="default">по умолчанию</option>
+              <option value="popular">популярное</option>
+              <option value="cheap">дешёвое</option>
+              <option value="expensive">дорогое</option>
+            </select>
+            <button class="visually-hidden" type="submit">Отсортировать продукты</button>
+          </form>
+
+          <ul class="catalog__product-list">
+            <li class="product-card">
+              <a class="product-card__link" href="product.html">
+                <picture>
+                  <img class="product-card__image" src="img/products/coffee-can-1.png" srcset="img/products/coffee-can-1@2x.png 2x" alt="Кофе без кофеина из Эфиопии">
+                </picture>
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__inner-wrapper">
+                <b class="product-card__price">225₽</b>
+                <button class="product-card__button button" type="button">В корзину</button>
+              </div>
+            </li>
+            <li class="product-card">
+              <a class="product-card__link" href="product.html">
+                <picture>
+                  <img class="product-card__image" src="img/products/coffee-can-2.png" srcset="img/products/coffee-can-2@2x.png 2x" alt="Кофе без кофеина из Эфиопии">
+                </picture>
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__inner-wrapper">
+                <b class="product-card__price">225₽</b>
+                <button class="product-card__button button" type="button">В корзину</button>
+              </div>
+            </li>
+            <li class="product-card">
+              <a class="product-card__link" href="product.html">
+                <picture>
+                  <img class="product-card__image" src="img/products/coffee-can-3.png" srcset="img/products/coffee-can-3@2x.png 2x" alt="Кофе без кофеина из Эфиопии">
+                </picture>
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__inner-wrapper">
+                <b class="product-card__price">225₽</b>
+                <button class="product-card__button button" type="button">В корзину</button>
+              </div>
+            </li>
+            <li class="product-card">
+              <a class="product-card__link" href="product.html">
+                <picture>
+                  <img class="product-card__image" src="img/products/coffee-can-4.png" srcset="img/products/coffee-can-4@2x.png 2x" alt="Кофе без кофеина из Эфиопии">
+                </picture>
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__inner-wrapper">
+                <b class="product-card__price">225₽</b>
+                <button class="product-card__button button" type="button">В корзину</button>
+              </div>
+            </li>
+            <li class="product-card">
+              <a class="product-card__link" href="product.html">
+                <picture>
+                  <img class="product-card__image" src="img/products/coffee-can-5.png" srcset="img/products/coffee-can-5@2x.png 2x" alt="Кофе без кофеина из Эфиопии">
+                </picture>
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__inner-wrapper">
+                <b class="product-card__price">225₽</b>
+                <button class="product-card__button button" type="button">В корзину</button>
+              </div>
+            </li>
+            <li class="product-card">
+              <a class="product-card__link" href="product.html">
+                <picture>
+                  <img class="product-card__image" src="img/products/coffee-can-6.png" srcset="img/products/coffee-can-6@2x.png 2x" alt="Кофе без кофеина из Эфиопии">
+                </picture>
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__inner-wrapper">
+                <b class="product-card__price">225₽</b>
+                <button class="product-card__button button" type="button">В корзину</button>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="catalog__pagination pagination">
+            <li class="pagination__item" >
+              <a class="pagination__link pagination__link--prev">
+                <span class="pagination__text">Назад</span>
+                <svg class="pagination__arrow" width="6" height="10" viewBox="0 0 6 10" fill="#7859CF" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.80847 -5.20835e-08L6 1.23899L2.38306 5L6 8.76101L4.80847 10L-1.09891e-07 5L4.80847 -5.20835e-08Z" />
+                </svg>
+              </a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">1</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--current">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--next" href="#">
+                <span class="pagination__text">Вперед</span>
+                <svg class="pagination__arrow" width="6" height="10" viewBox="0 0 6 10" fill="#7859CF" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.19153 -5.20835e-08L5.41581e-08 1.23899L3.61694 5L3.82956e-07 8.76101L1.19153 10L6 5L1.19153 -5.20835e-08Z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="map" id="map">
+        <!-- сюда вставляется карта -->
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="page-footer__wrapper">
+        <div class="page-footer__inner-wrapper">
+          <a class="page-footer__logo" href="">
+            <picture>
+              <source media="(min-width: 768px)" width="170" height="36" srcset="./img/logo/logo-full.svg">
+              <img src="./img/logo/logo-medium.svg" width="82" height="36" alt="Интернет магазин Drink2Go">
+            </picture>
+            <p class="page-footer__logo-text">Интернет-магазин кофейных напитков</p>
+          </a>
+          <div class="page-footer__social social">
+            <ul class="social__list">
+              <li class="social__item">
+                <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy"><span class="visually-hidden">Мы в Вконтакте</span></a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--pinterest" href="https://www.facebook.com/htmlacademy"><span class="visually-hidden">Мы в Фейсбуке</span></a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--ok" href="https://www.instagram.com/htmlacademy"><span class="visually-hidden">Мы в Инстаграме</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="page-footer__list-wrapper">
+          <h4 class="page-footer__list-header">Интернет-магазин</h4>
+          <ul class="page-footer__list">
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">Каталог</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">Доставка</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">Способы оплаты</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">О нас</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__list-wrapper">
+          <h4 class="page-footer__list-header">Медиа</h4>
+          <ul class="page-footer__list">
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">Блог</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">Информация для СМИ</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link" href="#">Правовая информация</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__list-wrapper">
+          <h4 class="page-footer__list-header">Контакты</h4>
+          <p class="page-footer__contacts-text">Санкт-Петербург, набережная реки Карповки, дом 5</p>
+          <a class="page-footer__contacts-phone" href="tel:+79999999999">+7 (999) 999-99-99</a>
+        </div>
+        <div class="page-footer__copyright copyright">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+            <span class="copyright__link-text">Разработано в </span>
+            <svg class="copyright__image" width="112" height="16" viewBox="0 0 112 16" fill="#BDBDBD" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.32059 3.6H9.19659V12H8.32059V3.6ZM3.06459 12H2.17659V3.6H3.06459V12ZM8.40459 8.124H2.96859V7.344H8.40459V8.124ZM13.5703 12V4.368H10.6183V3.6H17.4103V4.368H14.4583V12H13.5703ZM18.8289 12V3.6H19.5609L23.4009 10.152H23.0169L26.8209 3.6H27.5529V12H26.7009V4.932H26.9049L23.4009 10.932H22.9809L19.4529 4.932H19.6809V12H18.8289ZM30.2899 12V3.6H31.1779V11.232H35.8819V12H30.2899ZM39.1529 12L42.9929 3.6H43.8689L47.7089 12H46.7729L43.2449 4.116H43.6049L40.0769 12H39.1529ZM40.6649 9.756L40.9289 9.036H45.8129L46.0769 9.756H40.6649ZM51.4759 12.06C50.8519 12.06 50.2919 11.924 49.7959 11.652C49.3079 11.372 48.9239 10.992 48.6439 10.512C48.3639 10.024 48.2239 9.468 48.2239 8.844C48.2239 8.212 48.3639 7.656 48.6439 7.176C48.9239 6.696 49.3079 6.32 49.7959 6.048C50.2919 5.776 50.8519 5.64 51.4759 5.64C52.0119 5.64 52.4959 5.744 52.9279 5.952C53.3599 6.16 53.6999 6.472 53.9479 6.888L53.3119 7.32C53.0959 7 52.8279 6.764 52.5079 6.612C52.1879 6.46 51.8399 6.384 51.4639 6.384C51.0159 6.384 50.6119 6.488 50.2519 6.696C49.8919 6.896 49.6079 7.18 49.3999 7.548C49.1919 7.916 49.0879 8.348 49.0879 8.844C49.0879 9.34 49.1919 9.772 49.3999 10.14C49.6079 10.508 49.8919 10.796 50.2519 11.004C50.6119 11.204 51.0159 11.304 51.4639 11.304C51.8399 11.304 52.1879 11.228 52.5079 11.076C52.8279 10.924 53.0959 10.692 53.3119 10.38L53.9479 10.812C53.6999 11.22 53.3599 11.532 52.9279 11.748C52.4959 11.956 52.0119 12.06 51.4759 12.06ZM59.5696 12V10.608L59.5336 10.38V8.052C59.5336 7.516 59.3816 7.104 59.0776 6.816C58.7816 6.528 58.3376 6.384 57.7456 6.384C57.3376 6.384 56.9496 6.452 56.5816 6.588C56.2136 6.724 55.9016 6.904 55.6456 7.128L55.2616 6.492C55.5816 6.22 55.9656 6.012 56.4136 5.868C56.8616 5.716 57.3336 5.64 57.8296 5.64C58.6456 5.64 59.2736 5.844 59.7136 6.252C60.1616 6.652 60.3856 7.264 60.3856 8.088V12H59.5696ZM57.3976 12.06C56.9256 12.06 56.5136 11.984 56.1616 11.832C55.8176 11.672 55.5536 11.456 55.3696 11.184C55.1856 10.904 55.0936 10.584 55.0936 10.224C55.0936 9.896 55.1696 9.6 55.3216 9.336C55.4816 9.064 55.7376 8.848 56.0896 8.688C56.4496 8.52 56.9296 8.436 57.5296 8.436H59.7016V9.072H57.5536C56.9456 9.072 56.5216 9.18 56.2816 9.396C56.0496 9.612 55.9336 9.88 55.9336 10.2C55.9336 10.56 56.0736 10.848 56.3536 11.064C56.6336 11.28 57.0256 11.388 57.5296 11.388C58.0096 11.388 58.4216 11.28 58.7656 11.064C59.1176 10.84 59.3736 10.52 59.5336 10.104L59.7256 10.692C59.5656 11.108 59.2856 11.44 58.8856 11.688C58.4936 11.936 57.9976 12.06 57.3976 12.06ZM65.2077 12.06C64.6077 12.06 64.0677 11.924 63.5877 11.652C63.1157 11.38 62.7437 11.004 62.4717 10.524C62.1997 10.036 62.0637 9.476 62.0637 8.844C62.0637 8.204 62.1997 7.644 62.4717 7.164C62.7437 6.684 63.1157 6.312 63.5877 6.048C64.0677 5.776 64.6077 5.64 65.2077 5.64C65.7597 5.64 66.2517 5.764 66.6837 6.012C67.1237 6.26 67.4717 6.624 67.7277 7.104C67.9917 7.576 68.1237 8.156 68.1237 8.844C68.1237 9.524 67.9957 10.104 67.7397 10.584C67.4837 11.064 67.1357 11.432 66.6957 11.688C66.2637 11.936 65.7677 12.06 65.2077 12.06ZM65.2677 11.304C65.7157 11.304 66.1157 11.204 66.4677 11.004C66.8277 10.796 67.1077 10.508 67.3077 10.14C67.5157 9.764 67.6197 9.332 67.6197 8.844C67.6197 8.348 67.5157 7.916 67.3077 7.548C67.1077 7.18 66.8277 6.896 66.4677 6.696C66.1157 6.488 65.7157 6.384 65.2677 6.384C64.8277 6.384 64.4317 6.488 64.0797 6.696C63.7277 6.896 63.4477 7.18 63.2397 7.548C63.0317 7.916 62.9277 8.348 62.9277 8.844C62.9277 9.332 63.0317 9.764 63.2397 10.14C63.4477 10.508 63.7277 10.796 64.0797 11.004C64.4317 11.204 64.8277 11.304 65.2677 11.304ZM67.6437 12V10.104L67.7277 8.832L67.6077 7.56V3.096H68.4597V12H67.6437ZM73.5085 12.06C72.8525 12.06 72.2765 11.924 71.7805 11.652C71.2845 11.372 70.8965 10.992 70.6165 10.512C70.3365 10.024 70.1965 9.468 70.1965 8.844C70.1965 8.22 70.3285 7.668 70.5925 7.188C70.8645 6.708 71.2325 6.332 71.6965 6.06C72.1685 5.78 72.6965 5.64 73.2805 5.64C73.8725 5.64 74.3965 5.776 74.8525 6.048C75.3165 6.312 75.6805 6.688 75.9445 7.176C76.2085 7.656 76.3405 8.212 76.3405 8.844C76.3405 8.884 76.3365 8.928 76.3285 8.976C76.3285 9.016 76.3285 9.06 76.3285 9.108H70.8445V8.472H75.8725L75.5365 8.724C75.5365 8.268 75.4365 7.864 75.2365 7.512C75.0445 7.152 74.7805 6.872 74.4445 6.672C74.1085 6.472 73.7205 6.372 73.2805 6.372C72.8485 6.372 72.4605 6.472 72.1165 6.672C71.7725 6.872 71.5045 7.152 71.3125 7.512C71.1205 7.872 71.0245 8.284 71.0245 8.748V8.88C71.0245 9.36 71.1285 9.784 71.3365 10.152C71.5525 10.512 71.8485 10.796 72.2245 11.004C72.6085 11.204 73.0445 11.304 73.5325 11.304C73.9165 11.304 74.2725 11.236 74.6005 11.1C74.9365 10.964 75.2245 10.756 75.4645 10.476L75.9445 11.028C75.6645 11.364 75.3125 11.62 74.8885 11.796C74.4725 11.972 74.0125 12.06 73.5085 12.06ZM85.9467 5.64C86.4587 5.64 86.9027 5.74 87.2787 5.94C87.6627 6.132 87.9587 6.428 88.1667 6.828C88.3827 7.228 88.4907 7.732 88.4907 8.34V12H87.6387V8.424C87.6387 7.76 87.4787 7.26 87.1587 6.924C86.8467 6.58 86.4027 6.408 85.8267 6.408C85.3947 6.408 85.0187 6.5 84.6987 6.684C84.3867 6.86 84.1427 7.12 83.9667 7.464C83.7987 7.8 83.7147 8.208 83.7147 8.688V12H82.8627V8.424C82.8627 7.76 82.7027 7.26 82.3827 6.924C82.0627 6.58 81.6147 6.408 81.0387 6.408C80.6147 6.408 80.2427 6.5 79.9227 6.684C79.6027 6.86 79.3547 7.12 79.1787 7.464C79.0107 7.8 78.9267 8.208 78.9267 8.688V12H78.0747V5.7H78.8907V7.404L78.7587 7.104C78.9507 6.648 79.2587 6.292 79.6827 6.036C80.1147 5.772 80.6227 5.64 81.2067 5.64C81.8227 5.64 82.3467 5.796 82.7787 6.108C83.2107 6.412 83.4907 6.872 83.6187 7.488L83.2827 7.356C83.4667 6.844 83.7907 6.432 84.2547 6.12C84.7267 5.8 85.2907 5.64 85.9467 5.64ZM90.7321 14.388C90.4361 14.388 90.1521 14.34 89.8801 14.244C89.6161 14.148 89.3881 14.004 89.1961 13.812L89.5921 13.176C89.7521 13.328 89.9241 13.444 90.1081 13.524C90.3001 13.612 90.5121 13.656 90.7441 13.656C91.0241 13.656 91.2641 13.576 91.4641 13.416C91.6721 13.264 91.8681 12.992 92.0521 12.6L92.4601 11.676L92.5561 11.544L95.1481 5.7H95.9881L92.8321 12.756C92.6561 13.164 92.4601 13.488 92.2441 13.728C92.0361 13.968 91.8081 14.136 91.5601 14.232C91.3121 14.336 91.0361 14.388 90.7321 14.388ZM92.4121 12.18L89.5081 5.7H90.3961L92.9641 11.484L92.4121 12.18Z"/>
+              <path d="M111.215 5.75392L105.972 2.49957V2.49875L105.971 2.49916L105.971 2.49875V2.49957L100.785 5.75013V1.40658L106 0.830884L111.215 1.40658V5.75392ZM111.211 6.32987L109.126 7.62344L105.985 5.65607L105.979 6.22863L108.664 7.9096L108.201 8.19683L105.985 6.80853L105.979 7.3811L107.729 8.47648L107.316 8.76717L107.306 8.77351L105.985 7.95383L105.979 8.52631L106.847 9.06404L105.963 9.62244L100.796 6.3886L105.971 3.1139V3.11448L111.211 6.32987ZM111.215 11.7713L106 15.0384L100.785 11.7713V7.02542L105.978 10.2796L105.986 10.8693L102.424 8.63702L102.419 9.20959L105.995 11.4728L106.004 12.0782L102.429 9.83883L102.424 10.4113L106 12.6745L109.606 10.4026V7.95712L111.215 6.94552V11.7713ZM106 -3.17891e-07L100 0.662267V12.2411L106 16L112 12.2411V0.662267L106 -3.17891e-07Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>
