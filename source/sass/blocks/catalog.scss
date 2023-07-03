@@ -34,13 +34,14 @@
     padding-right: 40px;
     display: grid;
     grid-template-columns: 318px 1011px;
+    grid-template-rows: auto auto 56px;
     column-gap: 30px;
     grid-template-areas:
         'badge badge'
         'header header'
         'filter sort'
         'filter products'
-        'pagination pagination';
+        'filter pagination';
   }
 }
 
