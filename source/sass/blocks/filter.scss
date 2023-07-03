@@ -67,8 +67,10 @@
   line-height: 20px;
   outline: none;
 
+  -moz-appearance: textfield; //убрать вспомогательные стрелки в input[type='number'] для Firefox
+
   &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
+  &::-webkit-inner-spin-button { //убрать вспомогательные стрелки в input[type='number'] для Chrome
     appearance: none;
     margin: 0;
   }
