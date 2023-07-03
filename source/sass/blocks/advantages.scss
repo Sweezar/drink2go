@@ -97,6 +97,7 @@
   width: 56px;
   height: 56px;
   margin-bottom: 5px;
+  background-repeat: no-repeat;
 
   @media (min-width: $tablet-width) {
     margin-left: 8px;
@@ -111,19 +112,19 @@
 }
 
 .advantages__item--speed .advantages__icon-wrapper {
-  background-image: url(/img/icons/stack.svg#clock);
+  background-image: url(/img/clock.svg);
 }
 
 .advantages__item--comfort .advantages__icon-wrapper {
-  background-image: url(/img/icons/stack.svg#pocket);
+  background-image: url(/img/pocket.svg);
 }
 
 .advantages__item--cheerfulness .advantages__icon-wrapper{
-  background-image: url(/img/icons/stack.svg#lightning);
+  background-image: url(/img/lightning.svg);
 }
 
 .advantages__item--eco .advantages__icon-wrapper {
-  background-image: url(/img/icons/stack.svg#leaf);
+  background-image: url(/img/leaf.svg);
 }
 
 .advantages__title {
