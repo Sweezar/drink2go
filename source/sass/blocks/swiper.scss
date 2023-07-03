@@ -29,6 +29,11 @@
     opacity: 0.25;
   }
 
+  &:focus,
+  &:hover {
+    background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  }
+
   &::after {
     content: '';
     display: block;
